@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Live stock price ticker</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+
+    <script>
+      $(function () {
+
+        var ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
+        console.log (ConvID);
+        var socket = io.connect('http://127.0.0.1:8000');
+        socket.on('ConvID', function(userinfo) {
+          $('#userinfo').text(userinfo);
+        });
+
+      });
+    </script>
+
+  </head>
+  <body>
+    Name: <span id="userinfo">no data yet</span>
+
+
+    <script>
+    lpTag.agentSDK.init({})
+    </script>
+  </body>
+</html>
