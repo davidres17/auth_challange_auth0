@@ -2,6 +2,10 @@
   "name": "websocket-stock-ticker",
   "version": "0.0.1",
   "description": "WebSocket Stock Ticker",
+  "main" : "app.js"
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
