@@ -10,8 +10,8 @@
     <script>
       $(function () {
 
-        var ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
-        console.log (ConvID);
+        //var ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
+        //console.log (ConvID);
         var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
         socket.on('ConvID', function(userinfo) {
           $('#userinfo').text(userinfo);
