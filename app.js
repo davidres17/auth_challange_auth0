@@ -1,6 +1,6 @@
 var app = require('express')();
-var https = require('https').Server(app);
-var io = require('socket.io')(https);
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -29,6 +29,6 @@ io.on('connection', function(socket) {
     });
  
 
-https.listen(process.env.PORT, function() {
+http.listen(process.env.PORT, function() {
     console.log('Listening on *:6000');
 });
