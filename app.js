@@ -22,7 +22,7 @@ console.log(userinfo);
 
 io.on('connection', function(socket) {
     console.log('A new WebSocket connection has been established on socket id ' + socket.id);
-    console.log ('Conversation ID = ' + socket.handshake.query.ConvID;)
+    console.log ('Conversation ID = ' + socket.handshake.query.ConvID);
 });
 
     io.on('disconnect', () => {
