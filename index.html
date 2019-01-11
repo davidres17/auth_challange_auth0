@@ -7,25 +7,24 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
 
-    <script>
-      $(function () {
-
-        //var ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
-        //console.log (ConvID);
-        var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
-        socket.on('userinfo', function(userinfo) {
-          $('#userinfo').text(userinfo);
-        });
-
-      });
-    </script>
-
   </head>
   <body>
     Name: <span id="userinfo">no data yet</span>
 
 
     <script>
+     $(function () {
+
+        var ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
+        console.log (ConvID);
+        var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
+        socket.on(ConvID, function(userinfo) {
+          $('#userinfo').text(userinfo);
+        });
+
+      }); 
+      
+      
     lpTag.agentSDK.init({})
     </script>
   </body>
