@@ -29,6 +29,6 @@ io.on('connection', function(socket) {
     });
  
 
-https.listen(443, function() {
-    console.log('Listening on *:443');
+https.listen(6000, function() {
+    console.log('Listening on *:6000');
 });
