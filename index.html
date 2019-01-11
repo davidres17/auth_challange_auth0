@@ -6,26 +6,33 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
-
-  </head>
-  <body>
-    Name: <span id="userinfo">no data yet</span>
-
-
-    <script>
-     $(function () {
-
-        
+<script>
+  var onSuccess = function(data) {
+        var ConvID = data;
+        console.log ("Conversoin ID: " +  ConvID);
+        function () {
         var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
         socket.on(ConvID, function(userinfo) {
           $('#userinfo').text(userinfo);
         });
 
-      }); 
-      ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
-      console.log (ConvID);
+      }
+        
+            
+    };
+        
+var onError = function(data) {};
       
-    lpTag.agentSDK.init({})
-    </script>
+lpTag.agentSDK.init({});
+function myfunction() {
+        lpTag.agentSDK.get('chatInfo.rtSessionId', onSuccess, onError);
+        console.log ("ABC_AUTH init");
+    }
+    setTimeout(myfunction, 1000); 
+  
+    </script>  
+  </head>
+  <body>
+    Name: <span id="userinfo">no data yet</span>
   </body>
 </html>
