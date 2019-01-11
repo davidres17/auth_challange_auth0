@@ -10,15 +10,10 @@
   var onSuccess = function(data) {
         var ConvID = data;
         console.log ("Conversoin ID: " +  ConvID);
-        function () {
         var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
         socket.on(ConvID, function(userinfo) {
           $('#userinfo').text(userinfo);
-        });
-
-      }
-        
-            
+        });         
     };
         
 var onError = function(data) {};
