@@ -13,10 +13,10 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res){
   var userinfo = req.body.userinfo;
-  var socket_id = req.body.socket_id
+  var socket_id = req.body.socket_id;
 console.log(userinfo);
      io.to(socket_id).emit('userinfo', userinfo);
-       res.send('userinfo has been updated')
+       res.send('userinfo has been updated');
 
 });
 
@@ -27,9 +27,8 @@ io.on('connection', function(socket) {
     io.on('disconnect', () => {
       console.log(`Socket ${socket.id} disconnected.`);
     });
-;
  
 
 https.listen(443, function() {
-    console.log('Listening on *:8000');
+    console.log('Listening on *:443');
 });
