@@ -11,7 +11,7 @@
         var ConvID = data;
         console.log ("Conversoin ID: " +  ConvID);
         var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
-        socket.on(ConvID, function(userinfo) {
+        socket.on('userinfo', function(userinfo) {
           $('#userinfo').text(userinfo);
         });         
     };
