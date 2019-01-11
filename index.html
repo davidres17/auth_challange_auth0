@@ -13,7 +13,7 @@
         //var ConvID = lpTag.agentSDK.get(chatInfo.rtSessionId);
         //console.log (ConvID);
         var socket = io.connect('https://lpsc-abc-auth.herokuapp.com/');
-        socket.on('ConvID', function(userinfo) {
+        socket.on('userinfo', function(userinfo) {
           $('#userinfo').text(userinfo);
         });
 
