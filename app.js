@@ -31,5 +31,5 @@ io.on('connection', function(socket) {
  
 
 http.listen(process.env.PORT, function() {
-    console.log('Listening on *:6000');
+    console.log('Listening on *: ' + process.env.PORT);
 });
